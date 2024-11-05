@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@import "react-calendar/dist/Calendar.css";
+@import "react-toastify/dist/ReactToastify.css";
+@import "react-quill/dist/quill.snow.css";
+@import "../styles//customCalender.css";
+@import "../styles/loaderSpinner.css";
+@import "../styles/form.css";
+@import "../styles/thinScrollbar.css";
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+/* This will work when we will have theme implemented */
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+  font-family: "Inter", sans-serif;
+}
+
+.border-gradient {
+  border-image-source: linear-gradient(96deg, #e1097c -1.63%, #1a4cff 42.99%);
+  border-image-slice: 1;
+}
+
+.left-section-image {
+  /* position: absolute; */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+/* // loader */
+#fullscreen-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #000;
+  opacity: 95%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 8px solid #97a3ac;
+  width: 80px;
+  height: 80px;
+  animation: spin 0.5s linear infinite;
+}
+
+.before-image::before {
+  background: url("../../public/images/hex1.svg") no-repeat;
+  position: absolute;
+  width: 224px;
+  height: 224px;
+  content: "";
+  top: 12;
+  /* background: url(); */
+}
+
+.after-image::after {
+  background: url("../../public/images/hex2.svg") no-repeat;
+  width: 224px;
+  height: 224px;
+  top: 0;
+  content: "";
+}
+
+/* Media query to hide the after-image on screens smaller than 768px (adjust the width as needed) */
+@media screen and (max-width: 640px) {
+  .after-image::after {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-container {
+  overflow-x: auto; /* Allow manual scrolling */
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.scrolling-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+}
+
+.animate-scroll {
+  animation: scroll 420s linear infinite; /* Continuous scroll animation */
+}
+
+.scrolling-container::-webkit-scrollbar {
+  height: 5px; /* Optional: Thin scrollbar for cleaner UI */
+}
+
+.scrolling-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Customize scrollbar color */
+}
+
+.Toastify__toast-body {
+  display: none;
+}
+
+.Toastify__toast {
+  height: 3px;
+  min-height: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.Toastify__toast-body {
+  display: none;
+}
+
+.Toastify__toast-icon {
+  display: none;
+}
+
+.Toastify__close-button {
+  display: none;
+}
+
+.Toastify__toast-container{
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none;
+  padding: 0px
+}

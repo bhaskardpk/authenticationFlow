@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Next.js build cache
+.next/cache/
+
+# VS Code settings
+.vscode/
+
+# MacOS Finder directory attributes
+.DS_Store
+
+# Linux swap files
+*.swp
+
+# IDE and editor files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.idea/
+
+# Temporary files
+*.log
+*.tmp
+
+# Yarn integrity file
+.yarn-integrity
+
+# npm package lock
+package-lock.json
+
+# pnpm lock
+pnpm-lock.yaml
+
+# yarn lock
+yarn.lock
+
+# TypeScript artifacts
+*.tsbuildinfo
+
+# Custom build files
+build/
+dist/
+
+
+# Ignoring images folder
+public/uploads/profile/*
+public/uploads/player/*
